@@ -1,0 +1,44 @@
+Trabalho II - Tópicos Avançados de Programação
+
+Documento de Requisitos: Gestão Financeira
+
+Objetivos Gerais
+O Minha Carteira é um software semelhante à Startups como ZeroPaper e  Conta Azul , estando entre as diversas opções de ERPs no mercado, onde cada um conta com qualidades e funcionalidades distintas.
+
+Entretanto, existe uma guerra na busca do sistema mais completo. Quadros comparativos de funcionalidades são um argumento de venda de muitos sistemas. Adequar-se à todas as áreas de atuação também é um mantra vinculado à qualidade do sistema. 
+
+O problema disso é que a visão da grande empresa é empurrada para a pequena empresa, micro empresa, empreendedor individual, etc. E são realidades muito diferentes.
+
+Então nos questionamos: O que realmente é preciso para gerir um pequeno empreendimento? Quais são as atividades elementares? Quais são os controles essenciais?
+
+Requisitos funcionais
+1. O sistema pode cadastrar uma empresa. O cadastro deve ser vinculado à uma pessoa física, com as seguintes informações:
+nome, data de nascimento, cpf, telefone, data de cadastro, última alteração, e-mail, senha e endereço.
+2. Os dados da empresa podem ser alterados, mas não podem ser removidos. Estando sempre vinculados ao usuário da conta. Para a conta da empresa, é necessário cadastrar os seguintes dados:
+nome fantasia, razão social, cnpj, inscrição estadual, inscrição municipal, telefone, tipo de atividade e endereço.
+3. O sistema deve permitir a inclusão, remoção e alteração de contas bancárias com as seguintes informações: nome, titular, tipo de conta (PF ou PJ), saldo inicial, banco, agência e número da conta.
+4. O sistema deve permitir alterações nas informações de um cliente de todos os dados, verificando dados que tem que ser únicos no banco de dados. 
+5. O sistema deve permitir a adição, alteração e remoção de um ou mais usuários vinculados à uma conta de uma empresa.
+6. O sistema deve possuir categorias de receitas e categorias de despesas padrão.
+7. O sistema deve permitir a adição, alteração e remoção de receitas.
+8. O sistema deve permitir a adição, alteração e remoção de  despesas.
+9. O sistema deve permitir a adição, alteração e remoção de clientes.
+10. O sistema deve permitir a adição, alteração e remoção de fornecedores.
+11. O sistema deve calcular as receitas e despesas referentes à uma conta bancária da empresa.
+
+Relatórios e consultas
+1. O sistema deve permitir a impressão de uma listagem com todas as receitas de uma empresa por mês, ano ou datas definidas.
+2. O sistema deve permitir a impressão de uma listagem com todas as despesas de uma empresa por mês, ano ou datas definidas.
+3. O sistema deve permitir a impressão de uma listagem com todos os clientes de uma empresa.
+4. O sistema deve permitir a impressão de uma listagem com todas as despesas de uma empresa por mês, ano ou datas definidas para um fornecedor específico.
+5. O sistema deve permitir a impressão de uma listagem com todas as receitas de uma empresa por mês, ano ou datas definidas para um cliente específico.
+
+Dica: http://crudigniter.com/
+O sistema deve iniciar a impressão de relatórios solicitados dentro
+de no máximo 20 segundos após sua requisição.
+Bônus
+- Restful
+- Envio de e-mails
+Observações
+- Deve ser entregue até o dia 22/06.
+- O banco de dados deve estar na raíz do projeto em um arquivo .sql.
