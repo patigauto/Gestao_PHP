@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
-class User extends CI_Controller {
+class Cliente extends CI_Controller {
 	
 public function __construct()
        {
@@ -16,7 +16,7 @@ public function __construct()
 		 $this->load->helper('form');
 		$this->load->model('combobox');
         $data['estados'] = $this->combobox->getestados();
-        $this->load->view('User/create', $data);
+        $this->load->view('Cliente/create', $data);
 	}
 	
 	
@@ -26,29 +26,45 @@ public function __construct()
 		$cpf= ($this->input->post('cpf'));
 		$telefone= ($this->input->post('telefone'));
 		$email= ($this->input->post('email'));
-		$senha=($this->input->post('senha'));
 		$endereco=($this->input->post('endereco'));
+        $cidade = ($this->input->post('cidade'));
+        $estado = ($this->input->post('estado'));
 
-		$usuario = array( 
+		$cliente = array( 
 		'nome' => $nome, 
 		'data_nasc' => $data_nascimento,
 		'cpf' => $cpf,
 		'telefone' => $telefone,
 		'endereco' => $endereco,
 		'email' => $email,
-		'senha' => MD5($senha),
-		'data_cadastro' => date('Y-m-d')
+		'data_cadastro' => date('Y-m-d'),
+        'cidade' => $cidade,
+        'id_estado' => $estado
 		);
 		    
 
-		$usuario_cad = $this->UserModel->create($usuario);
+		$cliente_cad = $this->ClienteModel->create($cliente);
 		
 	}
+	public function list_cliente(){
+		$dados['clientes'] = $this->ClienteModel->get_clientes();
 
-	public function update_user() {
+		$this->load->view('Cliente/list', $dados);
+	}
+
+	public function editar() {
 		
 
 
+	}
+
+	public function excluir($id){
+		$this->load->model('ClienteModel');
+		if ($this->ClienteModel->excluir($id)) {
+			redirect('Cliente/list_cliente');
+		} else {
+			log_message('error', 'Erro ao deletar...');
+		}
 	}
 
 

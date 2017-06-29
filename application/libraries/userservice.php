@@ -6,7 +6,7 @@ class UserService
 
     public function Save($usuario)
     {
-		$this->db->insert('user', $usuario);
+		
 
     }
 

@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class UserModel extends CI_Model {
+class BancoModel extends CI_Model {
 	
 	public function __construct()
 	{
@@ -18,10 +18,10 @@ class UserModel extends CI_Model {
 		
 	}*/
 	
- public function create($usuario){
+ public function create($banco){
     $db = $this->load->database();
 
-		$inserir = $this->db->insert('usuarios', $usuario);
+		$inserir = $this->db->insert('bancos', $banco);
 		header("Location: ../../");
 	}	
 }

@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
 	<link href="<?= base_url();?>bootstrap/css/bootstrap.css" rel="stylesheet">
-	<title>Cadastro de Usuário</title>
+	<title>Cadastro de Clientes</title>
 </head> 
 <body> 
 	
@@ -9,12 +9,12 @@
 		<div class="col-lg-10"> 
 			<fieldset> 
 				
-				<legend>Cadastro de Usuário</legend> 
-				<form class="form-horizontal" role="form" action="User/create" method="post">
+				<legend>Cadastro de Clientes</legend> 
+				<form class="form-horizontal" role="form" action="Cliente/create" method="post">
 					<div class="form-group"> 
 						<label for="nome" class="col-lg-3 control-label">Nome Completo</label> 
 						<div class="col-lg-6"> 
-							<input type="text" class="form-control" name="nome" id="nome" placeholder="João da Silva"> 
+							<input type="text" class="form-control" name="nome" id="nome" placeholder="João da Silva" required> 
 						</div> 
 					</div> 
 					<div class="form-group"> 
@@ -65,15 +65,9 @@
 						</div> 
 					</div> 
 					<div class="form-group"> 
-						<label for="senha" class="col-lg-3 control-label">Senha</label> 
-						<div class="col-lg-6"> 
-							<input type="password" class="form-control" name="senha" id="senha" placeholder="******"> 
-						</div> 
-					</div> 
-					<div class="form-group"> 
 						<div class="col-lg-offset-3 col-lg-10"> 
 							<button type="submit" class="btn btn-success">Salvar</button> 
-							<a href="<?= base_url();?>" class="btn btn-primary">Cancel</a> 
+							<a href="<?= base_url();?>index.php/Cliente/list_cliente" class="btn btn-primary">Cancel</a> 
 						</div> 
 					</div> 
 				</form> 

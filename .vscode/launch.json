@@ -1,6 +1,7 @@
-/*{
+{
     "version": "0.2.0",
-    "configurations": [
+    "configurations":
+    [
         {
             "name": "Listen for XDebug",
             "type": "php",
@@ -14,12 +15,7 @@
             "program": "${file}",
             "cwd": "${fileDirname}",
             "port": 9000
-        }
-    ]
-}*/
-{
-    "version": "0.1.0",
-    "configurations": [
+        },
         {
             "name": "Launch localhost",
             "type": "chrome",
@@ -33,6 +29,6 @@
             "request": "launch",
             "sourceMaps": false,
             "file": "${workspaceRoot}/index.html"
-        },
+        }
     ]
 }
