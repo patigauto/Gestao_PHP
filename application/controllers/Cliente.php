@@ -57,11 +57,40 @@ public function __construct()
 		$this->load->view('Cliente/list', $dados);
 	}
 
-	public function editar() {
+	function editar($id)  {	
+		
+		$data['clientes'] = $this->ClienteModel->editar($id);
+	
+		$this->load->view('Cliente/update', $data);
+	}
+
+	function alterar() {		
+			$id= ($this->input->post('idcliente'));
+			$nome= ($this->input->post('nome'));
+			$telefone= ($this->input->post('telefone'));
+			$email= ($this->input->post('email'));
+			$endereco=($this->input->post('endereco'));
+			$cidade = ($this->input->post('cidade'));
+			//$estado = ($this->input->post('estado'));
+
+		$data = array( 
+		'nome' => $nome, 
+		'telefone' => $telefone,
+		'endereco' => $endereco,
+		'email' => $email,
+        'cidade' => $cidade,
+//        'id_estado' => $estado,
+//		'id_empresa' => $id_empresa
+		);
+
+	
+		$clientes['clientes'] = $this->ClienteModel->alterar($data, $id);
 		
 
+		header("Location: ../list_cliente");
+		//$this->load->view('Empresa/list_empresa');
 
-	}
+		}
 
 	public function excluir($id){
 		$this->load->model('ClienteModel');

@@ -99,7 +99,9 @@ public function __construct()
 	
 		$empresas['empresas'] = $this->EmpresaModel->alterar($data, $id);
 		
-		$this->load->view('Empresa/list_empresa');
+
+		header("Location: ../list_empresa");
+		//$this->load->view('Empresa/list_empresa');
 
 		}
 

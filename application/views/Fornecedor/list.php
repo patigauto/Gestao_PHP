@@ -24,7 +24,7 @@
                  <td><?php echo $fornecedor->nome ?></td>
                  <td><?php echo $fornecedor->endereco ?></td>
                  <td><?php echo $fornecedor->cidade ?></td>
-                 <td><?php echo $fornecedor->id_estado ?></td>
+                 <td><?php echo $fornecedor->estado ?></td>
                  <td><?php echo $fornecedor->data_cadastro ?></td>
                  <td>
                      <a href="<?php echo base_url() . 'index.php/Fornecedor/editar/' . $fornecedor->id; ?>" class="glyphicon glyphicon-pencil" title="Editar"></a>

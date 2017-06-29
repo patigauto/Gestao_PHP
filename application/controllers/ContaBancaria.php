@@ -20,6 +20,7 @@ public function __construct()
         $data['agencias'] = $this->combobox->getagencia();
         $data['bancos'] = $this->combobox->getbanco();
         $data['clientes'] = $this->combobox->getclientes();
+		$data['fornecedores'] = $this->combobox->getfornecedores();
         $this->load->view('Conta_Bancaria/create', $data);
 	}
 	

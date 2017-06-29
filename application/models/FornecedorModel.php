@@ -22,13 +22,13 @@ class FornecedorModel extends CI_Model {
     $db = $this->load->database();
 
 		$inserir = $this->db->insert('fornecedores', $fornecedor);
-		header("Location: ../../");
+		header("Location: ./list_fornecedores");
 	}
 
     public function get_fornecedores() {
 		$db = $this->load->database();
 		$fornecedor = array();
-		$this->db->select('es.*, f.*');
+		$this->db->select('es.*, f.*, es.nome as estado');
 		$this->db->join('estados es', 'es.id = f.id_estado');
 		$this->db->from('fornecedores f');
 		$fornecedor = $this->db->get()->result();

@@ -22,7 +22,7 @@ class ReceitaModel extends CI_Model {
     $db = $this->load->database();
 
 		$inserir = $this->db->insert('receitas', $receita);
-		header("Location: ../../");
+		header("Location: ./list_receitas");
 	}
 
     public function get_receitas() {

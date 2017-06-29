@@ -22,7 +22,7 @@ class EmpresaModel extends CI_Model {
  public function create($empresa){
 	 	$db = $this->load->database();
 		$inserir = $this->db->insert('empresas', $empresa);
-		header("Location: ../../");
+		header("Location: ./list_empresa");
 	}	
 
 	public function get_empresas() {
@@ -41,7 +41,7 @@ class EmpresaModel extends CI_Model {
 	function editar($id) {
 		$db = $this->load->database();
 		$empresas = array();
-		$this->db->select('em.id as idemp, es.*, em.*, tp.*');
+		$this->db->select('em.id as idemp, es.*, em.*, tp.*, tp.nome as atividade');
 		$this->db->join('estados es', 'es.id = em.id_estado');
 		$this->db->join('tipo_atividade tp', 'tp.id = em.id_tipo_atividade');
 		$this->db->join('status s','s.id=em.id_status');
@@ -52,12 +52,12 @@ class EmpresaModel extends CI_Model {
 		
 	}
 
-	function alterar($data, $idemp) {
+	function alterar($data, $id) {
 		$db = $this->load->database();
-		$this->db->set($data);
-		$this->db->where('id',$idemp);
+		$this->db->where('id',$id);
 		$this->db->update('empresas', $data);
-		return $this->db->get()->result();
+
+		return;
 	}
 
 	/*public function excluir($id){

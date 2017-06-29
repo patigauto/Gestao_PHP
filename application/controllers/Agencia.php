@@ -44,6 +44,11 @@ public function __construct()
 		$agencia_cad = $this->AgenciaModel->create($agencia);
 		
 	}
+    public function list_agencia(){
+		$dados['agencias'] = $this->AgenciaModel->get_agencias();
+
+		$this->load->view('Agencia/list', $dados);
+	}
 
 
 }

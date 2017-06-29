@@ -48,6 +48,22 @@ public function __construct()
 		
 	}
 
+	public function list_usuario(){
+		$dados['usuarios'] = $this->UserModel->get_usuarios();
+
+		$this->load->view('User/list', $dados);
+	}
+
+
+	public function excluir($id){
+		$this->load->model('UserModel');
+		if ($this->UserModel->excluir($id)) {
+			redirect('User/list_usuario');
+		} else {
+			log_message('error', 'Erro ao deletar...');
+		}
+	}
+
 	public function update_user() {
 		
 

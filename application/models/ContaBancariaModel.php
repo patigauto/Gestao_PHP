@@ -22,13 +22,13 @@ class ContaBancariaModel extends CI_Model {
     $db = $this->load->database();
 
 		$inserir = $this->db->insert('contas_bancarias', $contabancaria);
-		header("Location: ../../");
+		header("Location: ./list_contas");
 	}	
 
 	public function get_contas() {
 		$db = $this->load->database();
 		$contas = array();
-		$this->db->select('a.*, b.*, c.*, tp.*, cb.*');
+		$this->db->select('a.*, a.numero as agencia, b.*, c.*, b.nome as banco, tp.*, cb.*, c.nome as cliente, tp.nome as tipo');
 		$this->db->join('agencias a', 'a.id = cb.id_agencia');
 		$this->db->join('bancos b', 'b.id = cb.id_banco');
 		$this->db->join('clientes c', 'c.id = cb.id_titular');

@@ -22,7 +22,7 @@ class ClienteModel extends CI_Model {
     $db = $this->load->database();
 
 		$inserir = $this->db->insert('clientes', $cliente);
-		header("Location: ../../");
+		header("Location: ./list_cliente");
 	}
 
     public function get_clientes() {
@@ -43,7 +43,28 @@ class ClienteModel extends CI_Model {
 
 		$this->db->where('id', $id);
 		return $this->db->delete('clientes');
-  	}	
+  	}
+
+	  	function editar($id) {
+		$db = $this->load->database();
+		$clientes = array();
+		$this->db->select(' es.*, es.nome as estado, c.*,em.*, c.id as idcliente , em.nome_fantasia as empresa');
+		$this->db->join('estados es', 'es.id = c.id_estado');
+		$this->db->join('empresas em', 'em.id = c.id_empresa');
+		$this->db->from('clientes c');
+		$clientes = $this->db->get()->result();
+
+		return $clientes; 
+		
+	}
+
+	function alterar($data, $id) {
+		$db = $this->load->database();
+		$this->db->where('id',$id);
+		$this->db->update('clientes', $data);
+
+		return;
+	}	
 }
 
 

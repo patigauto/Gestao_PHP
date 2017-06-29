@@ -14,10 +14,10 @@
 			<fieldset> 
 				
 				<legend>Relatorio despesa</legend> 
-				<form class="form-horizontal" role="form" action="pesquisadespesas" method="post">
+				<form class="form-inline" role="form" action="pesquisadespesas" method="post">
 					<div class="form-group"> 
 						<label for="id_fornecedor" class="col-lg-3 control-label">Fornecedor</label>	
-						<?php echo "<select name='id_fornecedor' id='id_fornecedor'>";
+						<?php echo "<select name='id_fornecedor' id='id_fornecedor' class='form-control'>";
 							if (count($fornecedores)) {
 								foreach ($fornecedores as $fornecedor) {
 									echo "<option value='". $fornecedor['id'] . "'>" . $fornecedor['nome'] . "</option>";

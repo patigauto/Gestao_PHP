@@ -22,13 +22,16 @@ class DespesaModel extends CI_Model {
     $db = $this->load->database();
 
 		$inserir = $this->db->insert('despesas', $despesa);
-		header("Location: ../../");
+		$atualizar = $this->db->where('id',$despesa['id_conta_bancaria']);
+		$atualizar=$this->db->set('saldo',('saldo'-$despesa['valor']));
+		$atualizar = $this->db->update('contas_bancarias');
+		header("Location: ./list_despesas");
 	}
 
     public function get_despesas() {
 		$db = $this->load->database();
 		$despesa = array();
-		$this->db->select('c.*, d.*, cb.*');
+		$this->db->select('c.*, d.*, cb.*,c.nome as categoria, cb.nome as conta');
 		$this->db->join('contas_bancarias cb', 'cb.id = d.id_conta_bancaria');
 		$this->db->join('categorias c', 'c.id = d.id_categoria');
 		$this->db->join('fornecedores f', 'f.id = d.id_fornecedor');

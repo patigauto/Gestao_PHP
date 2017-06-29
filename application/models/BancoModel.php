@@ -22,9 +22,30 @@ class BancoModel extends CI_Model {
     $db = $this->load->database();
 
 		$inserir = $this->db->insert('bancos', $banco);
-		header("Location: ../../");
+		header("Location: ./list_bancos/");
 	}	
+
+	public function get_bancos() {
+		$db = $this->load->database();
+		$bancos = array();
+		$this->db->select('*');
+		$this->db->from('bancos');
+		$bancos = $this->db->get()->result();
+
+		return $bancos; 
+	}
+
+	public function excluir($id){
+		$db = $this->load->database();
+		if(is_null($id))
+			return false;
+
+		$this->db->where('id', $id);
+		return $this->db->delete('bancos');
+  	}	
 }
+
+
 
 
 ?>

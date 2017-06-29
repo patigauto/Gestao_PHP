@@ -31,7 +31,20 @@ public function __construct()
 		$banco_cad = $this->BancoModel->create($banco);
 		
 	}
+	public function list_bancos(){
+		$dados['bancos'] = $this->BancoModel->get_bancos();
 
+		$this->load->view('Banco/list', $dados);
+	}
+
+public function excluir($id){
+		$this->load->model('BancoModel');
+		if ($this->BancoModel->excluir($id)) {
+			redirect('Banco/list_bancos');
+		} else {
+			log_message('error', 'Erro ao deletar...');
+		}
+	}
 
 }
 

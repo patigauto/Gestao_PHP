@@ -53,6 +53,11 @@
 									echo "<option value='". $cliente['id'] . "'>". $cliente['nome']. ' - ' . $cliente['cpf'] . "</option>";
 								}
 							}
+							if (count($fornecedores)) {
+								foreach ($fornecedores as $fornecedor) {
+									echo "<option value='". $fornecedor['id'] . "'>". $fornecedor['nome'] . "</option>";
+								}
+							}
 							echo "</select><br/>"; 
 							?>
 					</div>

@@ -12,7 +12,12 @@
 				<legend>Edição de Empresa</legend> 
                 <?php foreach ($empresas as $empresa) : ?>
 				<form class="form-horizontal" role="form" action="<?php echo base_url() . 'index.php/Empresa/alterar/' . $empresa->idemp; ?>" method="post">
-				
+				<div class="form-group" hidden> 
+						<label for="idemp" class="col-lg-3 control-label">ID</label> 
+						<div class="col-lg-6"> 
+							<input type="text" class="form-control" id="idemp" value="<?php echo $empresa->idemp; ?>" name="idemp"> 
+						</div> 
+					</div> 
 					<div class="form-group"> 
 						<label for="nome_fantasia" class="col-lg-3 control-label">Nome Fantasia</label> 
 						<div class="col-lg-6"> 
@@ -45,7 +50,7 @@
 					</div>
                     <div class="form-group"> 
                     <label for="tipo_atividade" class="col-lg-3 control-label">Tipo de Atividade</label>	
-					<?php echo "<select name='tipo_atividade' id='tipo_atividade'>";
+					<?php echo "<select name='tipo_atividade' id='tipo_atividade'  value='<?php echo $empresa->atividade; ?>'>";
 							if (count($tipo_atividade)) {
 								foreach ($tipo_atividade as $tp_atividade) {
 									echo "<option value='". $tp_atividade['id'] . "'>" . $tp_atividade['nome'] . "</option>";

@@ -22,13 +22,13 @@ class CategoriaModel extends CI_Model {
     $db = $this->load->database();
 
 		$inserir = $this->db->insert('categorias', $categorias);
-		header("Location: ../../");
+		header("Location: ./list_categorias");
 	}
 
     public function get_categorias() {
 		$db = $this->load->database();
 		$categorias = array();
-		$this->db->select('tc.*, c.*');
+		$this->db->select('tc.*, c.*, tc.nome as categoria');
 		$this->db->join('tipo_categoria tc', 'tc.id = c.id_tipo_categoria');
 		$this->db->from('categorias c');
 		$categorias = $this->db->get()->result();

@@ -25,10 +25,10 @@
                  <td><?php echo $conta->id ?></td>
                  <td><?php echo $conta->nome ?></td>
                  <td><?php echo $conta->numero ?></td>
-                 <td><?php echo $conta->id_agencia ?></td>
-                 <td><?php echo $conta->id_banco ?></td>
-                 <td><?php echo $conta->id_titular ?></td>
-                 <td><?php echo $conta->id_tipo_pessoa ?></td>
+                 <td><?php echo $conta->agencia ?></td>
+                 <td><?php echo $conta->banco ?></td>
+                 <td><?php echo $conta->cliente ?></td>
+                 <td><?php echo $conta->tipo ?></td>
                  <td><?php echo $conta->saldo_inicial ?></td>
                  <td>
                      <a href="<?php echo base_url() . 'index.php/ContaBancaria/editar/' . $conta->id; ?>" class="glyphicon glyphicon-pencil" title="Editar"></a>
