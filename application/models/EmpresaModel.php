@@ -52,10 +52,10 @@ class EmpresaModel extends CI_Model {
 		
 	}
 
-	function alterar($data, $id) {
+	function alterar($data, $idemp) {
 		$db = $this->load->database();
 		$this->db->set($data);
-		$this->db->where('id',$id);
+		$this->db->where('id',$idemp);
 		$this->db->update('empresas', $data);
 		return $this->db->get()->result();
 	}

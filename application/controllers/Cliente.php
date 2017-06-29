@@ -16,20 +16,24 @@ public function __construct()
 		 $this->load->helper('form');
 		$this->load->model('combobox');
         $data['estados'] = $this->combobox->getestados();
+		$data['empresas'] = $this->combobox->getempresas();
         $this->load->view('Cliente/create', $data);
 	}
 	
 	
 	public function create() {	
 		$nome= ($this->input->post('nome'));
-		$data_nascimento= ($this->input->post('data_nascimento'));
+		$data_nasc= ($this->input->post('data_nascimento'));
 		$cpf= ($this->input->post('cpf'));
 		$telefone= ($this->input->post('telefone'));
 		$email= ($this->input->post('email'));
 		$endereco=($this->input->post('endereco'));
         $cidade = ($this->input->post('cidade'));
         $estado = ($this->input->post('estado'));
+		$id_empresa = ($this->input->post('id_empresa'));
 
+		$data_nascimento = date("Y-m-d", strtotime($data_nasc));
+		
 		$cliente = array( 
 		'nome' => $nome, 
 		'data_nasc' => $data_nascimento,
@@ -39,7 +43,8 @@ public function __construct()
 		'email' => $email,
 		'data_cadastro' => date('Y-m-d'),
         'cidade' => $cidade,
-        'id_estado' => $estado
+        'id_estado' => $estado,
+		'id_empresa' => $id_empresa
 		);
 		    
 

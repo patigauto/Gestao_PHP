@@ -31,6 +31,7 @@ class DespesaModel extends CI_Model {
 		$this->db->select('c.*, d.*, cb.*');
 		$this->db->join('contas_bancarias cb', 'cb.id = d.id_conta_bancaria');
 		$this->db->join('categorias c', 'c.id = d.id_categoria');
+		$this->db->join('fornecedores f', 'f.id = d.id_fornecedor');
 		$this->db->from('despesas d');
 		$despesa = $this->db->get()->result();
 

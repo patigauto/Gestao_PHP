@@ -17,6 +17,7 @@ public function __construct()
 		$this->load->model('combobox');
         $data['categorias'] = $this->combobox->getcategoriadespesas();
         $data['contas_bancarias'] = $this->combobox->getcontabancaria();
+		$data['fornecedores'] = $this->combobox->getfornecedores();
         $this->load->view('Despesas/create', $data);
 	}
 	
@@ -25,12 +26,16 @@ public function __construct()
 		$motivo= ($this->input->post('motivo'));
 		$id_categoria= ($this->input->post('id_categoria'));
 		$id_conta_bancaria=($this->input->post('id_conta_bancaria'));
+		$id_fornecedor=($this->input->post('id_fornecedor'));
+		$valor=($this->input->post('valor'));
 
 		$despesa = array( 
 		'motivo' => $motivo, 
 		'id_categoria' => $id_categoria,
 		'id_conta_bancaria' => $id_conta_bancaria,
-		'data_entrada' => date('Y-m-d')
+		'data_entrada' => date('Y-m-d'),
+		'id_fornecedor' => $id_fornecedor,
+		'valor'=>$valor
 		);
 		    
 

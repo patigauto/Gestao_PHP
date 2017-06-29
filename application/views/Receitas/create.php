@@ -39,6 +39,23 @@
 							echo "</select><br/>"; 
 							?>
 					</div>
+					<div class="form-group" >
+					<label for="id_cliente" class="col-lg-3 control-label">Cliente</label>	
+					<?php echo "<select name='id_cliente' id='id_cliente'>";
+							if (count($clientes)) {
+								foreach ($clientes as $cliente) {
+									echo "<option value='". $cliente['id'] . "'>". $cliente['nome']. ' - ' . $cliente['cpf'] . "</option>";
+								}
+							}
+							echo "</select><br/>"; 
+							?>
+					</div>
+					<div class="form-group"> 
+						<label for="valor" class="col-lg-3 control-label">Valor</label> 
+						<div class="col-lg-6"> 
+							<input type="text" class="form-control" name="valor" id="valor" placeholder="50.00" maxlength=100> 
+						</div> 
+					</div> 
 					<div class="form-group"> 
 						<div class="col-lg-offset-3 col-lg-10"> 
 							<button type="submit" class="btn btn-success">Salvar</button> 

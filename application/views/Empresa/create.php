@@ -81,6 +81,17 @@
 							echo "</select><br/>"; 
 							?>
 					</div>
+					<div class="form-group" >
+					<label for="id_status" class="col-lg-3 control-label">Status</label>	
+					<?php echo "<select name='id_status' id='id_status'>";
+							if (count($status)) {
+								foreach ($status as $status) {
+									echo "<option value='". $status['id'] . "'>" . $status['nome'] . "</option>";
+								}
+							}
+							echo "</select><br/>"; 
+							?>
+					</div>
 					<div class="form-group"> 
 						<div class="col-lg-offset-3 col-lg-10"> 
 							<button type="submit" class="btn btn-success">Salvar</button> 

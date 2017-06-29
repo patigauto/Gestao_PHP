@@ -17,6 +17,7 @@ public function __construct()
 		$this->load->model('combobox');
         $data['tipo_atividade'] = $this->combobox->gettipoatividade();
         $data['estados'] = $this->combobox->getestados();
+		$data['status'] = $this->combobox->getstatus();
         $this->load->view('Empresa/create', $data);
 
 	}
@@ -33,6 +34,7 @@ public function __construct()
         $endereco=($this->input->post('endereco'));
         $cidade=($this->input->post('cidade'));
         $id_estado=($this->input->post('estado'));
+		$id_status=($this->input->post('id_status'));
 
 		$empresa = array( 
 		'nome_fantasia' => $nome_fantasia, 
@@ -44,7 +46,8 @@ public function __construct()
 		'telefone' => $telefone,
 		'endereco' => $endereco,
         'cidade' => $cidade,
-        'id_estado' => $id_estado
+        'id_estado' => $id_estado,
+		'id_status' => $id_status
 		);
 		    
 
@@ -68,7 +71,7 @@ public function __construct()
 	}
 
 	function alterar() {		
-			$id= ($this->input->post('id'));
+			$id= ($this->input->post('idemp'));
 			$nome_fantasia= ($this->input->post('nome_fantasia'));
 			$razao_social= ($this->input->post('razao_social'));
 			$cnpj= ($this->input->post('cnpj'));

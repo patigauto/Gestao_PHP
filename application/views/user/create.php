@@ -1,8 +1,16 @@
-<html lang="en">
+<html>
 <head>
-	<link href="<?= base_url();?>bootstrap/css/bootstrap.css" rel="stylesheet">
 	<title>Cadastro de Usuário</title>
-</head> 
+	<link href="<?= base_url();?>bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$( "#calendario" ).datepicker();
+		});
+	</script>
+</head>
 <body> 
 	
 	<div class="container"> 
@@ -20,13 +28,13 @@
 					<div class="form-group"> 
 						<label for="data_nascimento" class="col-lg-3 control-label">Data de Nascimento</label> 
 						<div class="col-lg-6"> 
-							<input type="date" class="form-control" name="data_nascimento" id="data_nascimento" placeholder="01/01/1990"> 
+							<input type="date" class="form-control data" name="data_nascimento" id="calendario" placeholder="01/01/1990"> 
 						</div> 
 					</div> 
                     <div class="form-group"> 
 						<label for="cpf" class="col-lg-3 control-label">CPF</label> 
 						<div class="col-lg-6"> 
-							<input type="text" class="form-control" name="cpf" id="cpf" placeholder="999.999.999-99"> 
+							<input type="text" class="form-control cpf" name="cpf" id="cpf" placeholder="999.999.999-99"> 
 						</div> 
 					</div> 
                     <div class="form-group"> 

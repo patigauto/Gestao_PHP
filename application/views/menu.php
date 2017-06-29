@@ -21,6 +21,7 @@
       <li><a href="<?= base_url();?>index.php/Fornecedor/list_fornecedores">Fornecedor</a> </li>
       <li><a href="<?= base_url();?>index.php/Receita/list_receitas">Receitas</a> </li>
       <li><a href="<?= base_url();?>index.php/Despesa/list_despesas">Despesas</a> </li>
+      <li><a href="<?= base_url();?>index.php/Relatorio/Index">Relatorios</a> </li>
 
     </ul>
   </div>

@@ -5,7 +5,6 @@
         <title>Receitas</title>
     </head>
     <body>
-        <a class="btn btn-primary" href="<?= base_url();?>index.php/Receita">cadastro</a>
 
         <table class="table table-bordered">
             <tr>
@@ -26,11 +25,7 @@
                  <td><?php echo $receita->numeroconta ?> - <?php echo $receita->nomeconta ?></td>
                  <td><?php echo $receita->data_entrada ?></td>
                  <td><?php echo $receita->data_alteracao ?></td>
-                 <td>
-                     <a href="<?php echo base_url() . 'index.php/Receita/editar/' . $receita->idrec; ?>" class="glyphicon glyphicon-pencil" title="Editar"></a>
-                     <a href="<?php echo base_url() . 'index.php/Receita/excluir/' . $receita->idrec; ?>" class="glyphicon glyphicon-trash" title="Excluir"></a>
-                </td>
-                </tr>
+            </tr>
                 <?php endforeach; ?>
             </tbody>
 

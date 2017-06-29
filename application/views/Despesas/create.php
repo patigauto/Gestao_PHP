@@ -10,7 +10,7 @@
 			<fieldset> 
 				
 				<legend>Cadastro de Despesas</legend> 
-				<form class="form-horizontal" role="form" action="Despesas/create" method="post">
+				<form class="form-horizontal" role="form" action="Despesa/create" method="post">
 					<div class="form-group"> 
 						<label for="motivo" class="col-lg-3 control-label">Motivo</label> 
 						<div class="col-lg-6"> 
@@ -39,6 +39,23 @@
 							echo "</select><br/>"; 
 							?>
 					</div>
+					<div class="form-group" >
+					<label for="id_fornecedor" class="col-lg-3 control-label">Fornecedor</label>	
+					<?php echo "<select name='id_fornecedor' id='id_fornecedor'>";
+							if (count($fornecedores)) {
+								foreach ($fornecedores as $fornecedor) {
+									echo "<option value='". $fornecedor['id'] . "'>" . $fornecedor['nome'] ."</option>";
+								}
+							}
+							echo "</select><br/>"; 
+							?>
+					</div>
+					<div class="form-group"> 
+						<label for="valor" class="col-lg-3 control-label">Valor</label> 
+						<div class="col-lg-6"> 
+							<input type="text" class="form-control" name="valor" id="valor" placeholder="50.00" maxlength=100> 
+						</div> 
+					</div> 
 					<div class="form-group"> 
 						<div class="col-lg-offset-3 col-lg-10"> 
 							<button type="submit" class="btn btn-success">Salvar</button> 

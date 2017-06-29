@@ -1,10 +1,17 @@
 <html lang="en">
 <head>
-	<link href="<?= base_url();?>bootstrap/css/bootstrap.css" rel="stylesheet">
 	<title>Cadastro de Clientes</title>
+	<link href="<?= base_url();?>bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
 </head> 
+	<script>
+$(function() {
+    $( "#calendario" ).datepicker();
+});
+</script>
 <body> 
-	
 	<div class="container"> 
 		<div class="col-lg-10"> 
 			<fieldset> 
@@ -20,7 +27,7 @@
 					<div class="form-group"> 
 						<label for="data_nascimento" class="col-lg-3 control-label">Data de Nascimento</label> 
 						<div class="col-lg-6"> 
-							<input type="date" class="form-control" name="data_nascimento" id="data_nascimento" placeholder="01/01/1990"> 
+							<input type="date" class="form-control" name="data_nascimento" id="calendario" placeholder="01/01/1990"> 
 						</div> 
 					</div> 
                     <div class="form-group"> 
@@ -63,6 +70,17 @@
 						<div class="col-lg-6"> 
 							<input type="text" class="form-control" name="email" id="email" placeholder="usuario@gestao.com"> 
 						</div> 
+					</div>
+					<div class="form-group selectpicker" >
+					<label for="id_empresa" class="col-lg-3 control-label">Empresa</label>	
+					<?php echo "<select name='id_empresa' id='id_empresa'>";
+							if (count($empresas)) {
+								foreach ($empresas as $empresa) {
+									echo "<option value='". $empresa['id'] . "'>" . $empresa['nome_fantasia']. ' - ' . $empresa['razao_social']. "</option>";
+								}
+							}
+							echo "</select><br/>"; 
+							?>
 					</div> 
 					<div class="form-group"> 
 						<div class="col-lg-offset-3 col-lg-10"> 

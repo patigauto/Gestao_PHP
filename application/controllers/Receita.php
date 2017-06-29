@@ -17,6 +17,7 @@ public function __construct()
 		$this->load->model('combobox');
         $data['categorias'] = $this->combobox->getcategoriareceitas();
         $data['contas_bancarias'] = $this->combobox->getcontabancaria();
+        $data['clientes'] = $this->combobox->getclientes();
         $this->load->view('Receitas/create', $data);
 	}
 	
@@ -25,12 +26,16 @@ public function __construct()
 		$motivo= ($this->input->post('motivo'));
 		$id_categoria= ($this->input->post('id_categoria'));
 		$id_conta_bancaria=($this->input->post('id_conta_bancaria'));
+		$id_cliente= ($this->input->post('id_cliente'));
+		$valor= ($this->input->post('valor'));
 
 		$receita = array( 
 		'motivo' => $motivo, 
 		'id_categoria' => $id_categoria,
 		'id_conta_bancaria' => $id_conta_bancaria,
-		'data_entrada' => date('Y-m-d')
+		'data_entrada' => date('Y-m-d'),
+		'id_cliente' => $id_cliente,
+		'valor' => $valor
 		);
 		    
 

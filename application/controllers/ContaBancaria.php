@@ -40,7 +40,8 @@ public function __construct()
 		'id_banco' => $id_banco,
 		'id_titular' => $id_titular,
 		'id_tipo_pessoa' => $id_tipo_pessoa,
-		'saldo_inicial' => $saldo_inicial
+		'saldo_inicial' => $saldo_inicial,
+		'saldo'=>$saldo_inicial
 		);
 		    
 

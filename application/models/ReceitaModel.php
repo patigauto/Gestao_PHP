@@ -28,9 +28,10 @@ class ReceitaModel extends CI_Model {
     public function get_receitas() {
 		$db = $this->load->database();
 		$receita = array();
-		$this->db->select('c.*,cb.*, r.*');
+		$this->db->select('r.id as idrec, c.nome as nome_categoria,c.*,cb.numero as numeroconta, cb.nome as nomeconta,cb.*, r.*');
 		$this->db->join('contas_bancarias cb', 'cb.id = r.id_conta_bancaria');
 		$this->db->join('categorias c', 'c.id = r.id_categoria');
+		$this->db->join('clientes cl', 'cl.id = r.id_cliente');
 		$this->db->from('receitas r');
 		$receita = $this->db->get()->result();
 

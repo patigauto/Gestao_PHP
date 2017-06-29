@@ -22,12 +22,15 @@ public function __construct()
 	
 	public function create() {	
 		$nome= ($this->input->post('nome'));
-		$data_nascimento= ($this->input->post('data_nascimento'));
+		$data_nasc= ($this->input->post('data_nascimento'));
 		$cpf= ($this->input->post('cpf'));
 		$telefone= ($this->input->post('telefone'));
 		$email= ($this->input->post('email'));
 		$senha=($this->input->post('senha'));
 		$endereco=($this->input->post('endereco'));
+
+		$data_nascimento = date("Y-m-d", strtotime($data_nasc));
+
 
 		$usuario = array( 
 		'nome' => $nome, 
@@ -50,6 +53,8 @@ public function __construct()
 
 
 	}
+
+
 
 
 }

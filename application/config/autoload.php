@@ -143,5 +143,6 @@ $autoload['model'] = array(
                     'CategoriaModel',
                     'FornecedorModel',
                     'ReceitaModel',
-                    'DespesaModel'
+                    'DespesaModel',
+                    'RelatorioModel'
                     );
